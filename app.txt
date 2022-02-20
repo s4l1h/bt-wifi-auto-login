@@ -1,0 +1,32 @@
+# We will check if we are connected every app_login_check_timer minutes
+app_login_check_timer=1
+
+# Usualy you dont need to change this. Checking rule
+app_login_check_keyword=now logged on to BT
+app_login_check_url=https://www.btwifi.com:8443/
+
+
+# Anything start with header_ will be sending via header.
+header_Referer=https://www.btwifi.com:8443/home
+header_Origin=https://www.btwifi.com:8443
+
+
+# for btwifi 
+#app_login_url=https://www.btwifi.com:8443/ante
+#post_inputUsername=youremailaddress@hotmail.co.uk
+#post_username=youremailaddress@hotmail.co.uk
+#post_password=yourpassword
+#post_xhtmlLogon=https://www.btwifi.com:8443/ante
+
+
+# for bt broadband
+#app_login_url=https://www.btwifi.com:8443/tbbLogon
+#post_username=youremailaddress@hotmail.co.uk
+#post_password=yourpassword
+#post_xhtmlLogon=https://www.btwifi.com:8443/tbbLogon
+
+# for bt business broadband 
+#app_login_url=https://www.btwifi.com:8443/ante?partnerNetwork=btb
+#post_username=youremailaddress@hotmail.co.uk
+#post_password=yourpassword
+#post_xhtmlLogon=https://www.btwifi.com:8443/ante
