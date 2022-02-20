@@ -1,12 +1,15 @@
-# bt-wifi-auto-login
-bt wifi auto login software
+# BT wifi auto login software
 
 There are three login types for BT Wifi.\
 BT Business Broadband has tested by me.\
-BT Broadband and BT Wifi Account are propably working.\
+BT Broadband and BT Wifi login types are propably working.\
 I am not sure because I don't have accounts to test them.
 
-You need to put your details in **app.txt** and run the sofware.
+You need to put your details in **app.txt** and run the sofware.\
+You can access **app.txt** file from here https://github.com/s4l1h/bt-wifi-auto-login/blob/main/app.txt \
+Download automatic prebuilt software from https://github.com/s4l1h/bt-wifi-auto-login/releases \
+Or you can build your self. It's written in GO. https://go.dev/doc/tutorial/compile-install
+
 
 #### We will check if we are connected every app_login_check_timer minutes
 app_login_check_timer=1
