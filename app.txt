@@ -1,5 +1,5 @@
-# We will check if we are connected every app_login_check_timer minutes
-app_login_check_timer=1
+# We will check if we are connected every app_login_check_timer seconds
+app_login_check_timer=60
 
 # Usualy you dont need to change this. Checking rule
 app_login_check_keyword=now logged on to BT

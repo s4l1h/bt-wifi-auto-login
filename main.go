@@ -46,6 +46,7 @@ func printConfig() {
 		fmt.Printf("%s : \"%s\"\n", k, v)
 	}
 }
+
 func main() {
 	// Read Config File app.env
 	ReadConfig()
@@ -59,15 +60,15 @@ func main() {
 	}
 
 	if val, ok := cfgMap["app_login_check_timer"]; ok && val != "" {
-		checkTimerMinutes, err := strconv.ParseInt(val, 10, 64)
+		checkTimerSeconds, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
 			fmt.Println("Invalid app_login_check_timer value. It should be a number")
 			fmt.Println(err)
 			return
 		}
-		fmt.Printf("Setting up background login check every %d minutes\n", checkTimerMinutes)
+		fmt.Printf("Setting up background login check every %d seconds\n", checkTimerSeconds)
 
-		checkLoginTimer(time.Duration(checkTimerMinutes) * time.Minute)
+		checkLoginTimer(time.Duration(checkTimerSeconds) * time.Second)
 	}
 
 }
@@ -93,13 +94,14 @@ loop:
 		}
 	}
 }
-func login() {
+func login() bool {
 	params := url.Values{}
 	FilterConfigAndCallFn("post_", cfgMap, params.Add)
 	body := strings.NewReader(params.Encode())
 	req, err := http.NewRequest("POST", cfgMap["app_login_url"], body)
 	if err != nil {
 		fmt.Println(err)
+		return false
 	}
 	req.Header.Set("Connection", "keep-alive")
 	req.Header.Set("Pragma", "no-cache")
@@ -120,26 +122,30 @@ func login() {
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		fmt.Println(err)
+		return false
 	}
 	defer resp.Body.Close()
 	if checkLogin() {
 		fmt.Println("You're logged on to BT Wi-Fi")
-		return
+		return true
 	}
 
 	fmt.Println("There is someting went wrong")
 	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)
+		return false
 	}
 	bodyString := string(bodyBytes)
 	fmt.Println(bodyString)
+	return false
 }
 func checkLogin() bool {
 
 	req, err := http.NewRequest("GET", cfgMap["app_login_check_url"], nil)
 	if err != nil {
 		fmt.Println(err)
+		return false
 	}
 	req.Header.Set("Connection", "keep-alive")
 	req.Header.Set("Pragma", "no-cache")
@@ -158,6 +164,7 @@ func checkLogin() bool {
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		fmt.Println(err)
+		return false
 	}
 	defer resp.Body.Close()
 

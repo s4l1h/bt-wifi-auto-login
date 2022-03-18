@@ -11,8 +11,8 @@ Download automatic prebuilt software from https://github.com/s4l1h/bt-wifi-auto-
 Or you can build your self. It's written in GO. https://go.dev/doc/tutorial/compile-install
 
 
-#### We will check if we are connected every app_login_check_timer minutes
-app_login_check_timer=1
+#### We will check if we are connected every app_login_check_timer seconds
+app_login_check_timer=60
 
 #### Login Details will be posting this URL. It depends on your account type.
 app_login_url=https://www.btwifi.com:8443/ante?partnerNetwork=btb
