@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -52,6 +53,12 @@ func main() {
 	ReadConfig()
 	// Print Config details
 	printConfig()
+
+	// check ignore bad ssl setting
+	if val, ok := cfgMap["app_ignore_bad_ssl_error"]; ok && val == "1" {
+		fmt.Println("Ignoring bad ssl error: ON")
+		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
+	}
 
 	if checkLogin() {
 		fmt.Println("You're logged on to BT Wi-Fi")

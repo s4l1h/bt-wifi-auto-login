@@ -1,3 +1,5 @@
+# Ignore bad SSL error
+app_ignore_bad_ssl_error=1
 # We will check if we are connected every app_login_check_timer seconds
 app_login_check_timer=60
 
