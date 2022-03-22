@@ -11,7 +11,7 @@ Download automatic prebuilt software from https://github.com/s4l1h/bt-wifi-auto-
 Or you can build your self. It's written in GO. https://go.dev/doc/tutorial/compile-install
 
 #### Ignore bad SSL error.
-### If you are going to use "https://192.168.23.21:8443" for the address you will need it.
+##### If you are going to use "https://192.168.23.21:8443" for the address you will need it.
 app_ignore_bad_ssl_error=1
 
 #### We will check if we are connected every app_login_check_timer seconds
