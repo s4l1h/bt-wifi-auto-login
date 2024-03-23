@@ -1,34 +1,39 @@
 # Ignore bad SSL error
 app_ignore_bad_ssl_error=1
 # We will check if we are connected every app_login_check_timer seconds
-app_login_check_timer=60
+app_login_check_timer=30
 
 # Usualy you dont need to change this. Checking rule
-app_login_check_keyword=now logged on to BT
-app_login_check_url=https://www.btwifi.com:8443/
+app_login_check_keyword=You are now connected
+app_login_check_url=https://ee-wifi.ee.co.uk/
 
 
 # Anything start with header_ will be sending via header.
-header_Referer=https://www.btwifi.com:8443/home
-header_Origin=https://www.btwifi.com:8443
+header_Referer=https://ee-wifi.ee.co.uk/home
+header_Origin=https://ee-wifi.ee.co.uk/home
 
 
-# for btwifi 
-#app_login_url=https://www.btwifi.com:8443/ante
+# Login Data will be posting this URL
+# Anything start with post_ will be posting to app_login_url address.
+
+
+
+# ee wifi
+#app_login_url=https://ee-wifi.ee.co.uk/ante
 #post_inputUsername=youremailaddress@hotmail.co.uk
 #post_username=youremailaddress@hotmail.co.uk
-#post_password=yourpassword
-#post_xhtmlLogon=https://www.btwifi.com:8443/ante
+#post_password=password
+#post_xhtmlLogon=https://ee-wifi.ee.co.uk/ante
 
 
-# for bt broadband
-#app_login_url=https://www.btwifi.com:8443/tbbLogon
+# ee broadband
+#app_login_url=https://ee-wifi.ee.co.uk/tbbLogon
 #post_username=youremailaddress@hotmail.co.uk
-#post_password=yourpassword
-#post_xhtmlLogon=https://www.btwifi.com:8443/tbbLogon
+#post_password=password
+#post_xhtmlLogon=https://ee-wifi.ee.co.uk/tbbLogon
 
-# for bt business broadband 
-#app_login_url=https://www.btwifi.com:8443/ante?partnerNetwork=btb
+# ee business broadband
+#app_login_url=https://ee-wifi.ee.co.uk/ante?partnerNetwork=btb
 #post_username=youremailaddress@hotmail.co.uk
-#post_password=yourpassword
-#post_xhtmlLogon=https://www.btwifi.com:8443/ante
+#post_password=password
+#post_xhtmlLogon=https://ee-wifi.ee.co.uk/ante

@@ -1,8 +1,8 @@
-# BT wifi auto login software
+# EE wifi auto login software
 
-There are three login types for BT Wifi.\
-BT Business Broadband has tested by me.\
-BT Broadband and BT Wifi login types are propably working.\
+There are three login types for EE Wifi.\
+EE Business Broadband has tested by me.\
+EE Broadband and EE Wifi login types are propably working.\
 I am not sure because I don't have accounts to test them.
 
 You need to put your details in **app.txt** and run the sofware.\
@@ -18,21 +18,21 @@ app_ignore_bad_ssl_error=1
 app_login_check_timer=60
 
 #### Login Details will be posting this URL. It depends on your account type.
-app_login_url=https://www.btwifi.com:8443/ante?partnerNetwork=btb
+app_login_url=https://ee-wifi.ee.co.uk/ante?partnerNetwork=btb
 
 #### Usualy you dont need to change this. Checking rule. Basically we are cheking the keyword in the app_login_check_url 
 app_login_check_keyword=now logged on to BT
 
-app_login_check_url=https://www.btwifi.com:8443/
+app_login_check_url=https://ee-wifi.ee.co.uk/
 
 #### Anything start with header_ will be sending via header.
-header_Referer=https://www.btwifi.com:8443/home
+header_Referer=https://ee-wifi.ee.co.uk/home
 
-header_Origin=https://www.btwifi.com:8443
+header_Origin=https://ee-wifi.ee.co.uk
 
 #### Anything start with post_ will be posting to app_login_url address.
 post_username=youremailaddress@hotmail.co.uk
 
 post_password=yourpassword
 
-post_xhtmlLogon=https://www.btwifi.com:8443/ante ***-> it depends on your account type***
+post_xhtmlLogon=https://ee-wifi.ee.co.uk/ante ***-> it depends on your account type***
